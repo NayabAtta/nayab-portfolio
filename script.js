@@ -77,43 +77,6 @@ window.addEventListener("scroll", () => {
 
 });
 
-
-
-/* =========================================
-   CONTACT FORM
-========================================= */
-
-const contactForm = document.getElementById("contactForm");
-
-contactForm.addEventListener("submit", async function(event) {
-    event.preventDefault();
-
-    const name = document.getElementById("name").value;
-    const email = document.getElementById("email").value;
-    const message = document.getElementById("message").value;
-
-    const response = await fetch("https://formsubmit.co/ajax/inayab1106@gmail.com", {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json",
-            "Accept": "application/json"
-        },
-        body: JSON.stringify({
-            name: name,
-            email: email,
-            message: message,
-            _subject: "Portfolio Contact from " + name
-        })
-    });
-
-    if (response.ok) {
-        alert("Message sent successfully! ❤️");
-        contactForm.reset();
-    } else {
-        alert("Something went wrong. Please try again.");
-    }
-});
-
 /* =========================================
    CREATIVE LAB BUTTONS
 ========================================= */
